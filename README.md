@@ -1,5 +1,7 @@
-# ruby-cli-template
+# Soccer Player CLI
 
-Use this repository as a template for your Ruby CLI (command line interface) project.
+A command line interface app to simulate a professinal soccer players career 
 
-- Ruby version: `3.2.1`
+Usage
+
+Run ruby app.rb in the terminal.
