@@ -57,12 +57,15 @@ class Player
     opposition_team_score = rand(5)
     if my_team_score > opposition_team_score
       goals_scored = rand(my_team_score).to_i
+      puts "\n"
       puts "Congratulations! Your team won #{my_team_score} - #{opposition_team_score}! You scored #{goals_scored} goals."
     elsif opposition_team_score > my_team_score
       goals_scored = rand(my_team_score).to_i
+      puts "\n"
       puts "Sorry, your team lost #{my_team_score} - #{opposition_team_score}! You scored #{goals_scored} goals."
     else
       goals_scored = rand(my_team_score).to_i
+      puts "\n"
       puts "Even game, your team tied #{my_team_score} - #{opposition_team_score}! You scored #{goals_scored} goals."
     end
   end
@@ -70,12 +73,14 @@ class Player
   def switch_team
     puts "What team would you like to transfer to?"
     self.team = gets.chomp
+    puts "\n"
     puts "Congratulations you made a succesful transfer to #{@team}!"
   end
 
   def switch_position
     puts "what position would you like to play now?"
     self.position = gets.chomp
+    puts "\n"
     puts "Congratulations you are now playing as a #{@position}"
   end
 
