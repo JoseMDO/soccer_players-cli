@@ -40,11 +40,19 @@ class Player
       when 1 
         play
       when 2
-        switch_team
+        puts "What team would you like to transfer to?"
+        team = gets.chomp.downcase
+        puts "\n"
+        self.team = switch_team(team)
+        puts "Congratulations you made a succesful transfer to #{@team.capitalize}!"
       when 3
-        switch_position
+        puts "what position would you like to play now?"
+        position = gets.chomp.downcase
+        self.position = switch_position(position)
+        puts "\n"
+        puts "Congratulations you are now playing as a #{@position.capitalize}"
       when 4 
-        puts "You had an amazing career #{first_name}! You retired at #{@team} playing as a #{@position}. Enjoy your retirement!"
+        puts "You had an amazing career #{first_name}! You retired at #{@team.capitalize} playing as a #{@position.capitalize}. Enjoy your retirement!"
         break
       else
         puts "Please select a valid option for your players career"
@@ -70,18 +78,14 @@ class Player
     end
   end
 
-  def switch_team
-    puts "What team would you like to transfer to?"
-    self.team = gets.chomp
-    puts "\n"
-    puts "Congratulations you made a succesful transfer to #{@team}!"
+  def switch_team(team)
+    new_team = team
+    return new_team
   end
 
-  def switch_position
-    puts "what position would you like to play now?"
-    self.position = gets.chomp
-    puts "\n"
-    puts "Congratulations you are now playing as a #{@position}"
+  def switch_position(position)
+    new_position = position
+    return new_position
   end
 
   def to_s
